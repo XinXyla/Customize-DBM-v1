@@ -90,4 +90,4 @@ Adicionado: Opção para alterar a borda do bloco de notas
 Alteração: Os botões de criar comandos e eventos foram movidos para outro local pois os usuários estavam clicando sem querer quando iam buscar algo
 Alteração: A caixa de busca foi movida para cima das actions
 Removido: Alguns efeitos foram removidos pois estavam bugando o arrasto de actions
-Correção: Botão de criar actions e eventos sumia quando não tinha nenhum
+Correção: Botão de criar actions e eventos não aparecia quando não existia actions e eventos
