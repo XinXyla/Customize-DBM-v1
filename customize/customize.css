@@ -1,6 +1,6 @@
 :root {
 
-	--mark-versao: var(--config-versao);
+	--mark-versao19: var(--config-versao19);
 
 	/* Corpo das actions, eventos e comandos */
 	--mark-fa: var(--config-fa);
@@ -59,8 +59,15 @@
 	--mark-textocaixa: var(--config-textocaixa);
 
 	--mark-bordanotas: var(--config-bordanotas);
+	/* Criação actions e eventos */ 
+	--mark-acfundo: var(--config-acfundo);
+	--mark-actexto: var(--config-actexto);
+	--mark-acguia: var(--config-acguia);
 
-
+	--mark-actxtarea: var(--config-actxtarea);
+	--mark-actxtfundo: var(--config-actxtfundo);
+	--mark-actxtcor: var(--config-actxtcor);
+	--mark-actxttexto: var(--config-actxttexto);
 	
 }
 mark {
@@ -100,6 +107,7 @@ mark {
 	.savebat{background: var(--mark-baativo);cursor:pointer;width: 25px;height:25px;border-radius: 6px;border:none;}
 	.savebattxt{background: var(--mark-baativotxt);cursor:pointer;width: 25px;height:25px;border-radius: 6px;border:none;}
 	.savebcor{background: var(--mark-bcor);cursor:pointer;width: 25px;height:25px;border-radius: 6px;border:none;}
+
 	div.myactions button {background-color: var(--mark-ba);color: var(--mark-bcor) }
 	div.myactions button:hover {background-color: var(--mark-bah);color: var(--mark-bahtxt);border-left: 5px solid rgba(255, 255, 255, 0.103);}
 	div.myactions button.active {background-color: var(--mark-baativo);color: var(--mark-baativotxt);border-left: 5px solid rgba(255, 255, 255, 0.103);}
@@ -110,10 +118,26 @@ mark {
 	#actions button.active {height: var(--mark-botaoespaco);}
 	#event-actions button.active {height: var(--mark-botaoespaco);}
 
+		/* Criação actions e eventos */ 
+		.pusher{background:var(--mark-acfundo)var(--mark-actxttexto) !important;color:var(--mark-actexto)!important}
+		#theHead div{background:var(--mark-acguia) !important}
+		.action-footer{background:var(--mark-acguia) !important}
+
+		.pusher textarea{background:var(--mark-actxtarea) !important;color:var(--mark-actxtcor)!important;border:var(--mark-actxtfundo)!important;resize:both !important}
+		.pusher input{background:var(--mark-actxtarea) !important;color:var(--mark-actxtcor)!important;border:var(--mark-actxtfundo)!important}
+		.pusher select{background:var(--mark-actxtarea) !important;color:var(--mark-actxtcor)!important;border:var(--mark-actxtfundo)!important}
+
+	.saveacfundo{background: var(--mark-acfundo);cursor:pointer;width: 25px;height:25px;border-radius: 6px;border:none;}
+	.saveactexto{background: var(--mark-actexto);cursor:pointer;width: 25px;height:25px;border-radius: 6px;border:none;}
+	.saveacguia{background: var(--mark-acguia);cursor:pointer;width: 25px;height:25px;border-radius: 6px;border:none;}
+	.saveactxtarea{background: var(--mark-actxtarea);cursor:pointer;width: 25px;height:25px;border-radius: 6px;border:none;}
+	.saveactxtfundo{background: var(--mark-actxtfundo);cursor:pointer;width: 25px;height:25px;border-radius: 6px;border:none;}
+	.saveactxtcor{background: var(--mark-actxtcor);cursor:pointer;width: 25px;height:25px;border-radius: 6px;border:none;}
+
  
 .fundo{background-size: cover !important;}
 
-.versao{display: var(--mark-versao) !important;}
+.versao19{display: var(--mark-versao19) !important;}
 
 	/* Marcador de comandos e eventos */
 	.savemark{background: var(--mark-color);cursor:pointer;width: 25px;height:25px;border-radius: 6px;border:none;}
@@ -212,8 +236,8 @@ div.menu.transition.visible{background: var(--mark-caixafundo);border: var(--mar
 .savebtexto{background: var(--mark-btexto);cursor:pointer;width: 25px;height:25px;border-radius: 6px;border:none;}
 .savebfundohover{background: var(--mark-bfundohover);cursor:pointer;width: 25px;height:25px;border-radius: 6px;border:none;}
 .savebtextohover{background: var(--mark-btextohover);cursor:pointer;width: 25px;height:25px;border-radius: 6px;border:none;}
-.ui.button {background: var(--mark-bfundo);color: var(--mark-btexto);font-weight: bold;}
-.ui.button:hover {background: var(--mark-bfundohover);color: var(--mark-btextohover);font-weight: bold;}
+b button{background: var(--mark-bfundo) !important;color: var(--mark-btexto) !important ;font-weight: bold;}
+b button:hover {background: var(--mark-bfundohover)!important;color: var(--mark-btextohover)!important;font-weight: bold;}
 
 
 #browsebutton{background: #333;color:#ccc;border-radius: 10px;}

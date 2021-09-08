@@ -17,15 +17,15 @@
 				<button id="a_tab_sets" class="ui button" style="width: 20%;" onclick="DBM.shiftTabs(event, 'Customize', 3);setcustomize();setnotas()">Customizar</button>
 			</div>
 		</div>
-		<div onclick="setcustomize();setnotas();fecharatu()" id="versao" class="versao" style="z-index:99999;display:block;position:fixed;top:0;left:0;width:100%;height:100%;background:#111;color:#ccc"><center><img src="customize.xin.png" draggable="false" width="30%"/><br><br>Seu customize tem configurações pendentes, clique aqui duas vezes para restaura-las<br><br><div class="divcustomize" style="display:none"><input style="width:100px;background:#111;color:#333;border:0px;" class="round" id="versaox" type="text" name="txtstart" value="none" placeholder="none" onkeyup="setcustomize()"></div></center></div>
+		<div onclick="setcustomize();setnotas();fecharatu();setversao19()" id="versao19" class="versao19" style="z-index:99999;display:block;position:fixed;top:0;left:0;width:100%;height:100%;background:#111;color:#ccc"><center><img src="customize.xin.png" draggable="false" width="30%"/><br><br>Seu customize foi atualizado para a versão 1.9, clique duas vezes para instalar as novas configurações<br><br><div class="divcustomize" style="display:none"><input style="width:100px;background:#111;color:#333;border:0px;" class="round" id="versao19x" type="text" name="txtstart" value="none" placeholder="none" onkeyup="setcustomize()"></div></center></div>
 		<div class="bg_isActive"></div>
 		<div class="fundo"></div>
 		<div class="fundo2"></div>
 		<div class="fundo3"></div>
 		<!--<div style="text-align: left; display: inline-block; height: 100%; width: 100%; display: flex; align-items: center; justify-content: left;">-->
-		<div id="id_pages" style="padding: 0px 20px; width: 100%;height: 80%;">
-			<div id="Commands" style="display: block;" class="page">
-					<div class="action-holder">
+		<div id="id_pages" style="padding: 0px 20px; width: 100%;height: calc(100% - 30px);overflow: hidden">
+			<div id="Commands" style="display: block;height: calc(100% - 30px);overflow: hidden" class="page">
+					<div class="action-holder" style="display: block;height:100%">
 						<div style="margin:2px;"><table><thead><tr><td><img width="18" style="margin:2px" src="marcador.png"></td><td><input name="search" id='query' type="text" onclick="setsearchmark();" placeholder="Marcar comandos e actions..." style="overflow: hidden; width: 164px;border:1px solid #555;padding:4px; border-radius: 3px;" autofocus x-webkit-speech></td><td style="border:1px solid #555;width:39px;border-radius: 3px;text-align:center"><span id='matches'>0</span></td></tr></thead></table></div>
 						<div style="margin:2px 2px 8px 2px;vertical-align: middle;display:inline-block">
 							<table><thead><tr><td><img draggable="false" style="margin:2px;" width="18" src="lupa.png"></td><td><input name="search" type="text" id="indicador" onkeyup="buscaralvos('myactions')" placeholder="Buscar comando..." style="overflow: hidden; width: 206px;border:1px solid #555;padding:4px;" autofocus x-webkit-speech></td></tr></thead></table>
@@ -36,8 +36,10 @@
 				<div id="marque"><div class="myactions" id="myactions" style="width: 230px">
 						</div></div>
 				</div><br>
-				<button class="tiny ui labeled icon button" style="width: 230px;", box-shadow="0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);"style onclick="DBM.onCreateCommand()"><i class="plus icon"></i><span id="createnewbutton">Create New Command</span></button>						
-				<div id="command-content" style="margin-left: 250px; display: none"><br>
+			<b><button class="tiny ui labeled icon button" style="width: 230px;", box-shadow="0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);"style onclick="DBM.onCreateCommand()"><i class="plus icon"></i><span id="createnewbutton">Create New Command</span></button></b>						
+				<div id="command-content" style="margin-left: 250px; display: none;height:calc(100% - 40px)"><br>
+
+					<div style="height:15%;display:block">
 				
 					<div>
 						<div style="float: left; width: 68%" draggable="false">
@@ -52,21 +54,17 @@
 									<option value="1" id="includesword">Includes Word</option>
 									<option value="2" id="matchesregularexpression">Matches Regular Expression</option>
 									<option value="3" id="anymessage">Any Message</option>
-								</select>
-							</div>
-						</div>
-					</div>
+								</select></div></div></div>
 					<br><br><br><br>
-					<esp></esp><b><span id="comRestriction" class="textoxin">Command Restriction:</span></b><br>
-					<div style="width: 100%;" draggable="false">
+					<div style="width: 68%;float:left" draggable="false">
+						<esp></esp><b><span id="comRestriction" class="textoxin">Command Restriction:</span></b><br>
 						<select class="ui fluid dropdown" id="restriction" onchange="DBM.tempSaveData('restriction')">
 							<option value="0" id="commandrestrict_none">None</option>
 							<option value="1" id="commandrestrict_server">Server Only</option>
 							<option value="2" id="commandrestrict_owner">Owner Only</option>
 							<option value="3" id="commandrestrict_dms">DMs Only</option>
-						</select>
-					</div>
-					<br>
+						</select></div>
+					<div style="width: 30%;float:right" draggable="false">
 					<esp></esp><b><span id="userrequiredpermission" class="textoxin">User Required Permission:</span></b><br>
 					<select class="ui fluid dropdown" id="permissions" style="width: 100%;" onchange="DBM.tempSaveData('permissions')">
 						<option value="NONE" id="userreq_none">None</option>
@@ -98,21 +96,23 @@
 						<option value="MANAGE_ROLES" id="userreq_manageroles">Manage Roles</option>
 						<option value="MANAGE_WEBHOOKS" id="userreq_webhooks">Manage Webhooks</option>
 						<option value="MANAGE_EMOJIS" id="userreq_emojis">Manage Emojis</option>
-					</select>
-					<div class="footer" draggable="false">
+					</select></div>
+				</div><div draggable="false" style="display: block;height:90%">
+										<div class="footer" draggable="false" style="display: block;height:100%">
 						<div class="infooter" draggable="false"><div draggable="false" class="textoxin" style="padding:4px 2px 2px 2px;width:100%">
 							<div style="display:none"><b><span id="com_actions"><big>Actions:</big></span></b></div>
 							<div style="float: right; padding-bottom: 5px;" draggable="false">
-								<button class="tiny compact ui labeled icon button" onclick="DBM.addAction()"><i class="plus icon"></i><span id="com_create">Create</span></button>
-								<button class="tiny compact ui labeled icon button" onclick="DBM.editAction()"><i class="legal icon"></i><span id="com_edit">Edit</span></button>
-								<button class="tiny compact ui labeled icon button" onclick="DBM.deleteAction()"><i class="remove icon"></i><span id="com_delete">Delete</span></button>
+								<b><button class="tiny compact ui labeled icon button" onclick="DBM.addAction()"><i class="plus icon"></i><span id="com_create">Create</span></button></b>
+								<b><button class="tiny compact ui labeled icon button" onclick="DBM.editAction()"><i class="legal icon"></i><span id="com_edit">Edit</span></button></b>
+								<b><button class="tiny compact ui labeled icon button" onclick="DBM.deleteAction()"><i class="remove icon"></i><span id="com_delete">Delete</span></button></b>
 							</div>
 							<div style="float: left; padding-bottom: 5px;">
 								<table draggable="false" style="width:100%"><thead><tr><td style="width:22px"><img draggable="false" style="margin:2px;" width="18" src="lupa.png"></td><td><input name="search" type="text" id="indicadorc" onkeyup="buscaralvosc('actions')" placeholder="Buscar ação..." style="overflow: hidden; width: 250px;border:1px solid #555;padding:4px;" autofocus x-webkit-speech></td><td style="float:right"></td></tr></thead></table>
 							</div><div style="height:32px"><br></div>
 						</div>
-							<div id="marque2" draggable="false"><div class="myactions" id="actions" style="width: 100%"></div>
-							</div>
+						
+							<div id="marque2" draggable="false" style="display: block;height:100%;"><div class="myactions" id="actions" style="width: 100%"></div>
+						</div></div>
 							
 
 
@@ -130,7 +130,7 @@
 										<div id="marque3"><div class="emyactions" id="emyactions" style="width: 230px; height: 381px;">
 					</div></div>
 				</div>
-				<br/><button class="tiny ui labeled icon button" style="width: 230px;" onclick="DBM.eonCreateCommand()"><i class="plus icon"></i><span id="createnewevent">Create New Event</span></button>
+				<br/><b><button class="tiny ui labeled icon button" style="width: 230px;" onclick="DBM.eonCreateCommand()"><i class="plus icon"></i><span id="createnewevent">Create New Event</span></button></b>
 				<div id="event-command-content" style="margin-left: 250px; display: none;"><br>
 					
 					<esp></esp><b><span id="eventname" class="textoxin">Event Name:</span></b><br>
@@ -196,9 +196,9 @@
 					<div class="footer">
 						<div class="einfooter"><div draggable="false" class="textoxin" style="padding:2px 2px;width:100%">
 							<div style="float: right; padding-bottom: 5px;">
-								<button class="tiny compact ui labeled icon button" onclick="DBM.eaddAction()"><i class="plus icon"></i><span id="eve_create">Create</span></button>
-								<button class="tiny compact ui labeled icon button" onclick="DBM.eeditAction()"><i class="legal icon"></i><span id="eve_edit">Edit</span></button>
-								<button class="tiny compact ui labeled icon button" onclick="DBM.edeleteAction()"><i class="remove icon"></i><span id="eve_delete">Delete</span></button>
+							<b><button class="tiny compact ui labeled icon button" onclick="DBM.eaddAction()"><i class="plus icon"></i><span id="eve_create">Create</span></button></b>
+						<b><button class="tiny compact ui labeled icon button" onclick="DBM.eeditAction()"><i class="legal icon"></i><span id="eve_edit">Edit</span></button></b>
+					<b><button class="tiny compact ui labeled icon button" onclick="DBM.edeleteAction()"><i class="remove icon"></i><span id="eve_delete">Delete</span></button></b>
 							</div>
 							<div style="float: left; padding-bottom: 5px;">
 								<table draggable="false" style="width:100%"><thead><tr><td style="width:22px"><img draggable="false" style="margin:2px;" width="18" src="lupa.png"></td><td><input name="search" type="text" id="indicadorce" onkeyup="buscaralvosce('event-actions')" placeholder="Buscar ação do evento..." style="overflow: hidden; width: 250px;border:1px solid #555;padding:4px;" autofocus x-webkit-speech></td></tr></thead></table>
@@ -249,7 +249,7 @@
 				<div style="float:left; width: 85%;">
 					<input class="settings" type="password" autocomplete="new-password" id="settings-token" onchange="DBM.onSettingsChange('token')" onkeyup="DBM.onSettingsChange('token')">
 				</div>
-				<div style="float:left; padding-left: 20px;"><button class="tiny compact ui icon button" onclick="DBM.toggleHidden(this, 'settings-token')" style="width: 50px;" id="showbutton">Show</button></div>
+				<div style="float:left; padding-left: 20px;"><b><button class="tiny compact ui icon button" onclick="DBM.toggleHidden(this, 'settings-token')" style="width: 50px;" id="showbutton">Show</button></b></div>
 				<br><br>
 				<div style="padding-top: 6px;"><span id="clientid">Client ID:</span></div>
 				<input class="settings" style="width: 85%;" type="text" id="settings-client" onchange="DBM.onSettingsChange('client')" onkeyup="DBM.onSettingsChange('client')" maxlength="18"><br>
@@ -258,28 +258,31 @@
 				
 			</div>
 
-			<div id="notas" class="page" style="padding-top: 10px;height:110;overflow: hidden !important">
+			<div id="notas" class="page" style="padding-top: 10px;height:95%;overflow: hidden !important">
 
 
-					<div style="background:rgba(0,0,0,0.5);padding:10px;border-radius: 6px;height:100%;display:block;word-break: break-all !important;overflow-y: auto !important">
-						<center><img src="notas.xin.png" draggable="false" width="30%"/><br>
+					<div style="background:rgba(0,0,0,0.5);padding:10px;border-radius: 6px;height:100%;display:block;word-break: break-all !important;overflow: auto !important">
+						<center>
 
-							<div onselectstart="return false"><a onclick="abrir1()"><span class="notas selecionado">NOTA 1</span></a> <a onclick="abrir2()"><span class="notas">NOTA 2</span></a><a onclick="abrir3()"><span class="notas">NOTA 3</span></a><a onclick="abrir4()"><span class="notas">NOTA 4</span></a><a onclick="abrir5()"><span class="notas">NOTA 5</span></a><a onclick="abrir6()"><span class="notas">NOTA 6</span></a><a onclick="abrir7()"><span class="notas">NOTA 7</span></a><a onclick="abrir8()"><span class="notas">NOTA 8</span></a><a onclick="abrir9()"><span class="notas">NOTA 9</span></a><a onclick="abrir10()"><span class="notas">NOTA 10</span></a><br><br>
+							<div onselectstart="return false" style="height:22%;overflow: hidden">
+								<img src="notas.xin.png" draggable="false" width="30%"/><br>
+								
+								<a onclick="abrir1()"><span class="notas selecionado">NOTA 1</span></a> <a onclick="abrir2()"><span class="notas">NOTA 2</span></a><a onclick="abrir3()"><span class="notas">NOTA 3</span></a><a onclick="abrir4()"><span class="notas">NOTA 4</span></a><a onclick="abrir5()"><span class="notas">NOTA 5</span></a><a onclick="abrir6()"><span class="notas">NOTA 6</span></a><a onclick="abrir7()"><span class="notas">NOTA 7</span></a><a onclick="abrir8()"><span class="notas">NOTA 8</span></a><a onclick="abrir9()"><span class="notas">NOTA 9</span></a><a onclick="abrir10()"><span class="notas">NOTA 10</span></a><br><br>
 							</div>
-				<div style="display:block" id="divn1"><textarea class="notasarea" type="text" id="n1" rows="26" onkeyup="setnotas()" style="width: 99%; font-family: monospace; white-space: nowrap; resize: none"></textarea></div>
-				<div style="display:none" id="divn2"><textarea class="notasarea" type="text" id="n2" rows="26" onkeyup="setnotas()" style="width: 99%; font-family: monospace; white-space: nowrap; resize: none"></textarea></div>
-				<div style="display:none" id="divn3"><textarea class="notasarea" type="text" id="n3" rows="26" onkeyup="setnotas()" style="width: 99%; font-family: monospace; white-space: nowrap; resize: none"></textarea></div>
-				<div style="display:none" id="divn4"><textarea class="notasarea" type="text" id="n4" rows="26" onkeyup="setnotas()" style="width: 99%; font-family: monospace; white-space: nowrap; resize: none"></textarea></div>
-				<div style="display:none" id="divn5"><textarea class="notasarea" type="text" id="n5" rows="26" onkeyup="setnotas()" style="width: 99%; font-family: monospace; white-space: nowrap; resize: none"></textarea></div>
-				<div style="display:none" id="divn6"><textarea class="notasarea" type="text" id="n6" rows="26" onkeyup="setnotas()" style="width: 99%; font-family: monospace; white-space: nowrap; resize: none"></textarea></div>
-				<div style="display:none" id="divn7"><textarea class="notasarea" type="text" id="n7" rows="26" onkeyup="setnotas()" style="width: 99%; font-family: monospace; white-space: nowrap; resize: none"></textarea></div>
-				<div style="display:none" id="divn8"><textarea class="notasarea" type="text" id="n8" rows="26" onkeyup="setnotas()" style="width: 99%; font-family: monospace; white-space: nowrap; resize: none"></textarea></div>
-				<div style="display:none" id="divn9"><textarea class="notasarea" type="text" id="n9" rows="26" onkeyup="setnotas()" style="width: 99%; font-family: monospace; white-space: nowrap; resize: none"></textarea></div>
-				<div style="display:none" id="divn10"><textarea class="notasarea" type="text" id="n10" rows="26" onkeyup="setnotas()" style="width: 99%; font-family: monospace; white-space: nowrap; resize: none"></textarea></div>
+				<div style="text-align:center;width:100%;display:block;height: 100% !important" id="divn1"><textarea class="notasarea" type="text" id="n1" rows="26" onkeyup="setnotas()" style="width: 99%; font-family: monospace; white-space: nowrap; resize: yes"></textarea></div>
+				<div style="text-align:center;width:100%;display:none;height: 100% !important" id="divn2"><textarea class="notasarea" type="text" id="n2" rows="26" onkeyup="setnotas()" style="width: 99%; font-family: monospace; white-space: nowrap; resize: yes"></textarea></div>
+				<div style="text-align:center;width:100%;display:none;height: 100% !important" id="divn3"><textarea class="notasarea" type="text" id="n3" rows="26" onkeyup="setnotas()" style="width: 99%; font-family: monospace; white-space: nowrap; resize: yes"></textarea></div>
+				<div style="text-align:center;width:100%;display:none;height: 100% !important" id="divn4"><textarea class="notasarea" type="text" id="n4" rows="26" onkeyup="setnotas()" style="width: 99%; font-family: monospace; white-space: nowrap; resize: yes"></textarea></div>
+				<div style="text-align:center;width:100%;display:none;height: 100% !important" id="divn5"><textarea class="notasarea" type="text" id="n5" rows="26" onkeyup="setnotas()" style="width: 99%; font-family: monospace; white-space: nowrap; resize: yes"></textarea></div>
+				<div style="text-align:center;width:100%;display:none;height: 100% !important" id="divn6"><textarea class="notasarea" type="text" id="n6" rows="26" onkeyup="setnotas()" style="width: 99%; font-family: monospace; white-space: nowrap; resize: yes"></textarea></div>
+				<div style="text-align:center;width:100%;display:none;height: 100% !important" id="divn7"><textarea class="notasarea" type="text" id="n7" rows="26" onkeyup="setnotas()" style="width: 99%; font-family: monospace; white-space: nowrap; resize: yes"></textarea></div>
+				<div style="text-align:center;width:100%;display:none;height: 100% !important" id="divn8"><textarea class="notasarea" type="text" id="n8" rows="26" onkeyup="setnotas()" style="width: 99%; font-family: monospace; white-space: nowrap; resize: yes"></textarea></div>
+				<div style="text-align:center;width:100%;display:none;height: 100% !important" id="divn9"><textarea class="notasarea" type="text" id="n9" rows="26" onkeyup="setnotas()" style="width: 99%; font-family: monospace; white-space: nowrap; resize: yes"></textarea></div>
+				<div style="text-align:center;width:100%;display:none;height: 100% !important" id="divn10"><textarea class="notasarea" type="text" id="n10" rows="26" onkeyup="setnotas()" style="width: 99%; font-family: monospace; white-space: nowrap; resize: yes"></textarea></div>
 
 			</center></div>
 		</div>
-		   <div id="Customize" class="page" style="padding-top: 10px;height:110%;overflow: hidden">
+		   <div id="Customize" class="page" style="padding-top: 10px;height:95%;overflow: hidden">
 			
 					<div style="background:rgba(0,0,0,0.5);padding:10px;border-radius: 6px;height:100%;display:block;word-break: break-all;overflow-y: auto" id="customizetheme">
 											
@@ -298,66 +301,66 @@
 				<tr>
 
 				<th class="th1">Corpo das caixas de entrada/textarea:</th>
-				<th class="th2"><div class="pa">Fundo</div><input class="round" id="cordofundo3" name="cordofundo3qr" type="text" placeholder="rgba(0,0,0,0.7)" onkeyup="setcustomize()"></th>
-				<th class="th2"><div class="pa">Texto</div><input id="cortextocaixax" type="color" class="savetextocaixa" placeholder="rgb(0,0,0)" onkeyup="setcustomize()" onchange="setcustomize()"></th>
+				<th class="th2"><div class="pa"><a onMouseOver="toolTip('<img src=exemplos/01.png class=coman />', 1012, 114)" onMouseOut="toolTip()">Fundo</a></div><input class="round" id="cordofundo3" name="cordofundo3qr" type="text" placeholder="rgba(0,0,0,0.7)" onkeyup="setcustomize()"></th>
+				<th class="th2"><div class="pa"><a onMouseOver="toolTip('<img src=exemplos/02.png class=coman />', 1012, 114)" onMouseOut="toolTip()">Texto</a></div><input id="cortextocaixax" type="color" class="savetextocaixa" placeholder="rgb(0,0,0)" onkeyup="setcustomize()" onchange="setcustomize()"></th>
 				<th class="th2"></th>
 				<th class="th2"></th>
 				<th class="th2"></th>
 				<th class="th2"></th>
-				<th class="th2"><div class="pa">Borda</div><input class="round" id="corbordacaixax" name="corbordacaixaxqr" type="text" placeholder="2px solid rgba(0,0,0,0.7)" onkeyup="setcustomize()"></th>
+				<th class="th2"><div class="pa"><a onMouseOver="toolTip('<img src=exemplos/36.png class=coman />', 1038, 114)" onMouseOut="toolTip()">Borda</a></div><input class="round" id="corbordacaixax" name="corbordacaixaxqr" type="text" placeholder="2px solid rgba(0,0,0,0.7)" onkeyup="setcustomize()"></th>
 
 
 				</tr><tr>
 
 				<th class="th1">Corpo das actions, eventos e comandos:</th>
-				<th class="th2"><div class="pa">Fundo</div><input id="fundoactionx" type="color" class="saveaction" name="saveactionqr" placeholder="rgb(0,0,0)" onkeyup="setcustomize()" onchange="setcustomize()"></th>
+				<th class="th2"><div class="pa"><a onMouseOver="toolTip('<img src=exemplos/03.png class=coman />', 304, 114)" onMouseOut="toolTip()">Fundo</a></div><input id="fundoactionx" type="color" class="saveaction" name="saveactionqr" placeholder="rgb(0,0,0)" onkeyup="setcustomize()" onchange="setcustomize()"></th>
 				<th class="th2"></th>
 				<th class="th2"></th>
 				<th class="th2"></th>
 				<th class="th2"></th>
-				<th class="th2"><div class="pa">Borda</div><input class="round" id="bordaactionx" name="bordaactionxqr" type="text" placeholder="1px solid #333" onkeyup="setcustomize()"></th></th>
+				<th class="th2"><div class="pa"><a onMouseOver="toolTip('<img src=exemplos/04.png class=coman />', 304, 114)" onMouseOut="toolTip()">Borda</a></div><input class="round" id="bordaactionx" name="bordaactionxqr" type="text" placeholder="1px solid #333" onkeyup="setcustomize()"></th></th>
 				<th class="th2"></th>
 
 				</tr><tr>
 
 				<th class="th1">Corpo da página:</th>
-				<th class="th2"><div class="pa">Fundo</div><input class="round" id="cordofundo4" name="cordofundo4qr" type="text" placeholder="rgba(0,0,0,0.5)" onkeyup="setcustomize()"></th>
-				<th class="th2"><div class="pa">Texto</div><input id="cordostextos" type="color" class="savetxt" name="savetxtqr" placeholder="rgb(0,0,0)" onkeyup="setcustomize()" onchange="setcustomize()"></th>
+				<th class="th2"><div class="pa"><a onMouseOver="toolTip('<img src=exemplos/32.png class=coman />', 1038, 114)" onMouseOut="toolTip()">Fundo</a></div><input class="round" id="cordofundo4" name="cordofundo4qr" type="text" placeholder="rgba(0,0,0,0.5)" onkeyup="setcustomize()"></th>
+				<th class="th2"><div class="pa"><a onMouseOver="toolTip('<img src=exemplos/33.png class=coman />', 1038, 114)" onMouseOut="toolTip()">Texto</a></div><input id="cordostextos" type="color" class="savetxt" name="savetxtqr" placeholder="rgb(0,0,0)" onkeyup="setcustomize()" onchange="setcustomize()"></th>
 				<th class="th2"></th>
 				<th class="th2"></th>
 				<th class="th2"></th>
-				<th class="th2"><div class="pa">Espaços</div><input class="round" id="corpoespacox" name="corpoespacoxqr" placeholder="15px" onkeyup="setcustomize()"></th>
+				<th class="th2"><div class="pa"><a onMouseOver="toolTip('<img src=exemplos/34.png class=coman />', 1038, 114)" onMouseOut="toolTip()">Espaços</a></div><input class="round" id="corpoespacox" name="corpoespacoxqr" placeholder="15px" onkeyup="setcustomize()"></th>
 				<th class="th2"></th>
 
 				</tr><tr>
 
 				<th class="th1">Botões do Menu:</th>
-				<th class="th2"><div class="pa">Fundo</div><input id="bmfundox" type="color" class="savebmfundo"name="savebmfundoqr" placeholder="rgb(0,0,0)" onkeyup="setcustomize()" onchange="setcustomize()"></th>
-				<th class="th2"><div class="pa">Texto</div><input id="bmtextox" type="color" class="savebmtexto"name="savebmtextoqr" placeholder="rgb(0,0,0)" onkeyup="setcustomize()" onchange="setcustomize()"></th></th>
-				<th class="th2"><div class="pa">Fundo Hover</div><input id="bmfundohoverx" type="color" class="savebmfundohover"name="savebmfundohoverqr" placeholder="rgb(0,0,0)" onkeyup="setcustomize()" onchange="setcustomize()"></th></th>
-				<th class="th2"><div class="pa">Texto Hover</div><input id="bmtextohoverx" type="color" class="savebmtextohover"name="savebmtextohoverqr" placeholder="rgb(0,0,0)" onkeyup="setcustomize()" onchange="setcustomize()"></th></th>
-				<th class="th2"><div class="pa">Fundo Ativo</div><input id="bmfundoativox" type="color" class="savebmfundoativo"name="savebmfundoativoqr" placeholder="rgb(0,0,0)" onkeyup="setcustomize()" onchange="setcustomize()"></th></th>
-				<th class="th2"><div class="pa">Texto Ativo</div><input id="bmtextoativox" type="color" class="savebmtextoativo"name="savebmtextoativoqr" placeholder="rgb(0,0,0)" onkeyup="setcustomize()" onchange="setcustomize()"></th></th>
-				<th class="th2"><div class="pa">Espaços</div><input class="round" id="bmespacox" name="bmespacoxqr" type="text" placeholder="10px" onkeyup="setcustomize()"></th>
+				<th class="th2"><div class="pa"><a onMouseOver="toolTip('<img src=exemplos/25.png class=coman />', 890, 114)" onMouseOut="toolTip()">Fundo</a></div><input id="bmfundox" type="color" class="savebmfundo"name="savebmfundoqr" placeholder="rgb(0,0,0)" onkeyup="setcustomize()" onchange="setcustomize()"></th>
+				<th class="th2"><div class="pa"><a onMouseOver="toolTip('<img src=exemplos/26.png class=coman />', 890, 114)" onMouseOut="toolTip()">Texto</a></div><input id="bmtextox" type="color" class="savebmtexto"name="savebmtextoqr" placeholder="rgb(0,0,0)" onkeyup="setcustomize()" onchange="setcustomize()"></th></th>
+				<th class="th2"><div class="pa"><a onMouseOver="toolTip('<img src=exemplos/27.png class=coman />', 890, 114)" onMouseOut="toolTip()">Fundo Hover</a></div><input id="bmfundohoverx" type="color" class="savebmfundohover"name="savebmfundohoverqr" placeholder="rgb(0,0,0)" onkeyup="setcustomize()" onchange="setcustomize()"></th></th>
+				<th class="th2"><div class="pa"><a onMouseOver="toolTip('<img src=exemplos/28.png class=coman />', 890, 114)" onMouseOut="toolTip()">Texto Hover</a></div><input id="bmtextohoverx" type="color" class="savebmtextohover"name="savebmtextohoverqr" placeholder="rgb(0,0,0)" onkeyup="setcustomize()" onchange="setcustomize()"></th></th>
+				<th class="th2"><div class="pa"><a onMouseOver="toolTip('<img src=exemplos/29.png class=coman />', 890, 114)" onMouseOut="toolTip()">Fundo Ativo</a></div><input id="bmfundoativox" type="color" class="savebmfundoativo"name="savebmfundoativoqr" placeholder="rgb(0,0,0)" onkeyup="setcustomize()" onchange="setcustomize()"></th></th>
+				<th class="th2"><div class="pa"><a onMouseOver="toolTip('<img src=exemplos/30.png class=coman />', 890, 114)" onMouseOut="toolTip()">Texto Ativo</a></div><input id="bmtextoativox" type="color" class="savebmtextoativo"name="savebmtextoativoqr" placeholder="rgb(0,0,0)" onkeyup="setcustomize()" onchange="setcustomize()"></th></th>
+				<th class="th2"><div class="pa"><a onMouseOver="toolTip('<img src=exemplos/31.png class=coman />', 916, 114)" onMouseOut="toolTip()">Espaços</a></div><input class="round" id="bmespacox" name="bmespacoxqr" type="text" placeholder="10px" onkeyup="setcustomize()"></th>
 		
 				</tr><tr>	
 				
-				<th class="th1">Botões das actions,eventos e comandos:</th>
-				<th class="th2"><div class="pa">Fundo</div><input id="botaoactionx" type="color"class="saveba"name="savebaqr" placeholder="rgb(0,0,0)" onkeyup="setcustomize()" onchange="setcustomize()"></th>
-				<th class="th2"><div class="pa">Texto</div><input id="botaocorx" type="color"class="savebcor"name="savebcorqr" placeholder="rgb(0,0,0)" onkeyup="setcustomize()" onchange="setcustomize()"></th></th>
-				<th class="th2"><div class="pa">Fundo Hover</div><input id="botaoactionhoverx" type="color"class="savebh"name="savebhqr" placeholder="rgb(0,0,0)" onkeyup="setcustomize()" onchange="setcustomize()"></th></th>
-				<th class="th2"><div class="pa">Texto Hover</div><input id="botaoactionhovertxtx" type="color"class="savebhtxt"name="savebhtxtqr" placeholder="rgb(0,0,0)" onkeyup="setcustomize()" onchange="setcustomize()"></th></th>
-				<th class="th2"><div class="pa">Fundo Ativo</div><input id="botaoactionativox" type="color"class="savebat"name="savebatqr" placeholder="rgb(0,0,0)" onkeyup="setcustomize()" onchange="setcustomize()"></th></th>
-				<th class="th2"><div class="pa">Texto Ativo</div><input id="botaoactionativotxtx" type="color"class="savebattxt"name="savebattxtqr" placeholder="rgb(0,0,0)" onkeyup="setcustomize()" onchange="setcustomize()"></th></th>
-				<th class="th2"><div class="pa">Espaço Ativo</div><input class="round" id="botaoespacox"name="botaoespacoxqr" type="text" placeholder="20px" onkeyup="setcustomize()"></th>
+				<th class="th1">Seletores de ações,eventos e comandos:</th>
+				<th class="th2"><div class="pa"><a onMouseOver="toolTip('<img src=exemplos/18.png class=coman />', 673, 114)" onMouseOut="toolTip()">Fundo</a></div><input id="botaoactionx" type="color"class="saveba"name="savebaqr" placeholder="rgb(0,0,0)" onkeyup="setcustomize()" onchange="setcustomize()"></th>
+				<th class="th2"><div class="pa"><a onMouseOver="toolTip('<img src=exemplos/23.png class=coman />', 673, 114)" onMouseOut="toolTip()">Texto</a></div><input id="botaocorx" type="color"class="savebcor"name="savebcorqr" placeholder="rgb(0,0,0)" onkeyup="setcustomize()" onchange="setcustomize()"></th></th>
+				<th class="th2"><div class="pa"><a onMouseOver="toolTip('<img src=exemplos/21.png class=coman />', 673, 114)" onMouseOut="toolTip()">Fundo Hover</a></div><input id="botaoactionhoverx" type="color"class="savebh"name="savebhqr" placeholder="rgb(0,0,0)" onkeyup="setcustomize()" onchange="setcustomize()"></th></th>
+				<th class="th2"><div class="pa"><a onMouseOver="toolTip('<img src=exemplos/22.png class=coman />', 673, 114)" onMouseOut="toolTip()">Texto Hover</a></div><input id="botaoactionhovertxtx" type="color"class="savebhtxt"name="savebhtxtqr" placeholder="rgb(0,0,0)" onkeyup="setcustomize()" onchange="setcustomize()"></th></th>
+				<th class="th2"><div class="pa"><a onMouseOver="toolTip('<img src=exemplos/19.png class=coman />', 673, 114)" onMouseOut="toolTip()">Fundo Ativo</a></div><input id="botaoactionativox" type="color"class="savebat"name="savebatqr" placeholder="rgb(0,0,0)" onkeyup="setcustomize()" onchange="setcustomize()"></th></th>
+				<th class="th2"><div class="pa"><a onMouseOver="toolTip('<img src=exemplos/20.png class=coman />', 673, 114)" onMouseOut="toolTip()">Texto Ativo</a></div><input id="botaoactionativotxtx" type="color"class="savebattxt"name="savebattxtqr" placeholder="rgb(0,0,0)" onkeyup="setcustomize()" onchange="setcustomize()"></th></th>
+				<th class="th2"><div class="pa"><a onMouseOver="toolTip('<img src=exemplos/24.png class=coman />', 673, 114)" onMouseOut="toolTip()">Espaço Ativo</a></div><input class="round" id="botaoespacox"name="botaoespacoxqr" type="text" placeholder="20px" onkeyup="setcustomize()"></th>
 
 				</tr><tr style="display:none">
 					
 				<th class="th1">Botões:</th>
-				<th class="th2"><div class="pa">Fundo</div><input id="bfundox" type="color"class="savebfundo"name="savebfundoqr" placeholder="rgb(0,0,0)" onkeyup="setcustomize()" onchange="setcustomize()"></th>
-				<th class="th2"><div class="pa">Texto</div><input id="btextox" type="color"class="savebtexto"name="savebtextoqr" placeholder="rgb(0,0,0)" onkeyup="setcustomize()" onchange="setcustomize()"></th></th>
-				<th class="th2"><div class="pa">Fundo Hover</div><input id="bfundohoverx"name="bfundohoverxqr" type="color"class="savebfundohover" placeholder="rgb(0,0,0)" onkeyup="setcustomize()" onchange="setcustomize()"></th></th>
-				<th class="th2"><div class="pa">Texto Hover</div><input id="btextohoverx"name="btextohoverxqr" type="color"class="savebtextohover" placeholder="rgb(0,0,0)" onkeyup="setcustomize()" onchange="setcustomize()"></th></th>
+				<th class="th2"><div class="pa"><a onMouseOver="toolTip('<img src=exemplos/14.png class=coman />', 342, 114)" onMouseOut="toolTip()">Fundo</a></div><input id="bfundox" type="color"class="savebfundo"name="savebfundoqr" placeholder="rgb(0,0,0)" onkeyup="setcustomize()" onchange="setcustomize()"></th>
+				<th class="th2"><div class="pa"><a onMouseOver="toolTip('<img src=exemplos/15.png class=coman />', 342, 114)" onMouseOut="toolTip()">Texto</a></div><input id="btextox" type="color"class="savebtexto"name="savebtextoqr" placeholder="rgb(0,0,0)" onkeyup="setcustomize()" onchange="setcustomize()"></th></th>
+				<th class="th2"><div class="pa"><a onMouseOver="toolTip('<img src=exemplos/16.png class=coman />', 342, 114)" onMouseOut="toolTip()">Fundo Hover</a></div><input id="bfundohoverx"name="bfundohoverxqr" type="color"class="savebfundohover" placeholder="rgb(0,0,0)" onkeyup="setcustomize()" onchange="setcustomize()"></th></th>
+				<th class="th2"><div class="pa"><a onMouseOver="toolTip('<img src=exemplos/17.png class=coman />', 342, 114)" onMouseOut="toolTip()">Texto Hover</a></div><input id="btextohover"name="btextohoverxqr" type="color" class="savebtextohover" placeholder="rgb(0,0,0)" onkeyup="setcustomize()" onchange="setcustomize()"></th></th>
 				<th class="th2"></th>
 				<th class="th2"></th>
 				<th class="th2"></th>
@@ -365,8 +368,8 @@
 				</tr><tr>	
 				
 				<th class="th1"><span id="changemarkcolor">Marcador de comandos e eventos:</span> </th>
-				<th class="th2"><div class="pa">Fundo</div><input id="cordomarcador" type="color" class="savemark" placeholder="rgb(255,255,0)" onkeyup="setcustomize()" onchange="setcustomize()"></th>
-				<th class="th2"><div class="pa">Texto</div><input id="cordomarcadortxt" type="color"class="savemarktxt" placeholder="rgb(0,0,0)" onkeyup="setcustomize()" onchange="setcustomize()"></th>
+				<th class="th2"><div class="pa"><a onMouseOver="toolTip('<img src=exemplos/35.png class=coman />', 268, 114)" onMouseOut="toolTip()">Fundo</a></div><input id="cordomarcador" type="color" class="savemark" placeholder="rgb(255,255,0)" onkeyup="setcustomize()" onchange="setcustomize()"></th>
+				<th class="th2"><div class="pa"><a onMouseOver="toolTip('<img src=exemplos/35.png class=coman />', 268, 114)" onMouseOut="toolTip()">Texto</a></div><input id="cordomarcadortxt" type="color"class="savemarktxt" placeholder="rgb(0,0,0)" onkeyup="setcustomize()" onchange="setcustomize()"></th>
 				<th class="th2"></th>
 				<th class="th2"></th>
 				<th class="th2"></th>
@@ -387,15 +390,27 @@
 				</tr><tr>
 
 					<th class="th1">Bloco de notas:</th>
-					<th class="th2"><div class="pa">Fundo</div><input id="notasfundo" type="color" class="savenotasfundo" placeholder="rgb(255,255,0)" onkeyup="setcustomize()" onchange="setcustomize()"></th>
-					<th class="th2"><div class="pa">Texto</div><input id="notastxt" type="color"class="savenotastxt" name="notastxtqr" placeholder="rgb(0,0,0)" onkeyup="setcustomize()" onchange="setcustomize()"></th>
+					<th class="th2"><div class="pa"><a onMouseOver="toolTip('<img src=exemplos/11.png class=coman />', 867, 114)" onMouseOut="toolTip()">Fundo</a></div><input id="notasfundo" type="color" class="savenotasfundo" placeholder="rgb(255,255,0)" onkeyup="setcustomize()" onchange="setcustomize()"></th>
+					<th class="th2"><div class="pa"><a onMouseOver="toolTip('<img src=exemplos/12.png class=coman />', 867, 114)" onMouseOut="toolTip()">Texto</a></div><input id="notastxt" type="color"class="savenotastxt" name="notastxtqr" placeholder="rgb(0,0,0)" onkeyup="setcustomize()" onchange="setcustomize()"></th>
 					<th class="th2"></th>
 					<th class="th2"></th>
 					<th class="th2"></th>
-					<th class="th2"><div class="pa">Borda</div><input class="round" id="bordanotas" name="notasbordaqr" type="text" placeholder="1px solid #333" onkeyup="setcustomize()"></th></th>
+					<th class="th2"><div class="pa"><a onMouseOver="toolTip('<img src=exemplos/13.png class=coman />', 867, 114)" onMouseOut="toolTip()">Borda</a></div><input class="round" id="bordanotas" name="notasbordaqr" type="text" placeholder="1px solid #333" onkeyup="setcustomize()"></th></th>
 					<th class="th2"></th>
 	
 					</tr><tr>
+
+						<th class="th1">Janela de ações:</th>
+						<th class="th2"><div class="pa"><a onMouseOver="toolTip('<img src=exemplos/05.png class=coman />', 562, 114)" onMouseOut="toolTip()">Fundo da Guia</a></div><input id="acguia" name="acguia" type="color" class="saveacguia" placeholder="rgb(0,0,0)" onkeyup="setcustomize()" onchange="setcustomize()"></th>
+						<th class="th2"><div class="pa"><a onMouseOver="toolTip('<img src=exemplos/09.png class=coman />', 562, 114)" onMouseOut="toolTip()">Texto</a></div><input id="actexto" name="actexto" type="color" class="saveactexto" placeholder="#CCCCCC" value="#CCCCCC" onkeyup="setcustomize()" onchange="setcustomize()"></th>
+						<th class="th2"><div class="pa"><a onMouseOver="toolTip('<img src=exemplos/10.png class=coman />', 562, 114)" onMouseOut="toolTip()">Fundo</a></div><input id="acfundo" name="acfundo" type="color" class="saveacfundo" placeholder="rgb(255,255,0)" onkeyup="setcustomize()" onchange="setcustomize()"></th>
+						<th class="th2"><div class="pa"><a onMouseOver="toolTip('<img src=exemplos/06.png class=coman />', 562, 114)" onMouseOut="toolTip()">Fundo das caixas</a></div><input id="actxtarea" name="actxtarea" type="color" class="saveactxtarea" placeholder="rgb(0,0,0)" onkeyup="setcustomize()" onchange="setcustomize()"></th>
+						<th class="th2"><div class="pa"><a onMouseOver="toolTip('<img src=exemplos/07.png class=coman />', 562, 114)" onMouseOut="toolTip()">Texto das caixas</a></div><input id="actxtcor" name="actxtcor" type="color" class="saveactxtcor" placeholder="#CCCCCC" value="#CCCCCC" onkeyup="setcustomize()" onchange="setcustomize()"></th>
+						<th class="th2"><div class="pa"><a onMouseOver="toolTip('<img src=exemplos/08.png class=coman />', 562, 114)" onMouseOut="toolTip()">Borda</a></div><input class="round" id="actxtfundo" name="actxtfundo" type="text" placeholder="1px solid rgb(60,60,60)" onkeyup="setcustomize()"></th></th>
+						<th class="th2"><div class="pa"><a onMouseOver="toolTip('<img src=exemplos/10.png class=coman />', 562, 114)" onMouseOut="toolTip()">Imagem do fundo</a></div><input id="actxttexto" name="actxttexto" type="text" class="saveactxttexto" placeholder="url(./bg/01.jpg) center" onkeyup="setcustomize()" onchange="setcustomize()"></th>
+		
+						</tr><tr>
+	
 
 				<th class="th1">Recursos:</th>
 				<th class="th2"><div class="pa">Bolinha - Bot ON</div><div style="margin-left: 5px;" class="ui toggle checkbox">
@@ -416,7 +431,7 @@
 				</tr>
 
 
-			</table><br>Versão 1.8<br>
+			</table><br>Versão 1.9<br>
 			Criado por: <a style="cursor:pointer" onclick="DBM.openLink('https://discord.com/users/172782058396057602')">XinXyla#0001</a><br>
 			Colaboradores: Coded#1396, Snull#4408
 		<br><br>
@@ -436,8 +451,8 @@
 
 
 	</center></div>
-
-	<div class="versaoset"></div>
+	
+	<div class="versao19set"></div><div class="acfundo"></div><div class="actexto"></div><div class="acguia"></div><div class="actxtarea"></div><div class="actxtfundo"></div><div class="actxtcor"></div><div class="actxttexto"></div>
 	
 		<div class="bordanotas"></div><div class="notasfundo"></div><div class="notastxt"></div><div class="bmfundo"></div><div class="bmtexto"></div><div class="bmfundohover"></div><div class="bmtextohover"></div><div class="bmfundoativo"></div><div class="bmtextoativo"></div><div class="bmespaco"></div>
 <div class="rolfundo"></div><div class="rolbarra"></div><div class="rolbarraativa"></div><div class="rolbotoes"></div><div class="rolbotoesonoff"></div><div class="rolborda"></div><div class="roltamanho"></div>
@@ -445,7 +460,48 @@
 <div class="corpoespaco"></div><div class="bordaaction"></div><div class="fundo4"></div><div class="botaoespaco"></div><div class="textocaixa"></div><div class="bordacaixa"></div><div class="botaocor"></div><div class="botaoactionhover"></div><div class="botaoactionhovertxt"></div><div class="botaoactionativo"></div><div class="botaoactionativotxt"></div><div class="botaoaction"></div><div class="fundoaction"></div><div class="textos"></div><div class="marcador"></div>
 
 
-
+<script>
+	var OP=(navigator.userAgent.indexOf('Opera')!=-1);var IE=(navigator.userAgent.indexOf('MSIE')!=-1&&!OP);var GK=(navigator.userAgent.indexOf('Gecko')!=-1);var SA=(navigator.userAgent.indexOf('Safari')!=-1);var tooltip=null;function TOOLTIP(){this.width="320";this.bgColor="#000";this.textFont="Comic Sans MS";this.textSize=13;this.textColor="#eee";this.textAlign="center";this.border="2px solid 000";this.padding=4;this.opacity=0;this.cursorDistance=5;this.xPos="right";this.yPos="bottom";this.text='';this.height=0;this.obj=null;this.active=false;this.create=function(){if(!this.obj)this.init();this.obj.style.border=this.border;this.obj.style.padding=this.padding+'px';if(this.width)this.obj.style.width=this.width+'px';if(this.height)this.obj.style.height=this.height+'px';if(this.textFont)this.obj.style.fontFamily=this.textFont;if(this.textSize)this.obj.style.fontSize=this.textSize+'px';if(this.textColor)this.obj.style.color=this.textColor;if(this.textAlign)this.obj.style.textAlign=this.textAlign;if(this.bgColor)this.obj.style.backgroundColor=this.bgColor;this.obj.innerHTML=this.text;this.height=this.obj.offsetHeight;this.setOpacity();this.move();this.show();}
+	this.init=function(){this.obj=document.getElementById('ToolTip');if(this.obj)document.body.removeChild(this.obj);this.obj=document.createElement('div');this.obj.id='ToolTip';this.obj.style.position='absolute';this.obj.style.visibility='hidden';this.obj.style.cursor='pointer';this.obj.style.boxSizing='border-box';this.obj.style.MozBoxSizing='border-box';this.obj.style.msBoxSizing='border-box';this.obj.style.webkitBoxSizing='border-box';this.obj.onmouseover=function(){tooltip.show();}
+	this.obj.onmouseout=function(){tooltip.hide();}
+	this.obj.onclick=function(){tooltip.hide();}
+	document.body.appendChild(this.obj);}
+	this.move=function(){var winX=getWinX()-(((GK&&!SA)||OP)?17:0);var winY=getWinY()-(((GK&&!SA)||OP)?17:0);var x=mouseX;var y=mouseY;if(this.xPos=='left'){if(x- this.width- this.cursorDistance<getScrX())
+	x=getScrX();else x-=this.width+ this.cursorDistance;}
+	else{if(x+ this.width+ this.cursorDistance>winX+ getScrX())
+	x=winX+ getScrX()- this.width;else x+=this.cursorDistance;}
+	if(this.yPos=='top'){if(y- this.height- this.cursorDistance<getScrY())
+	y=getScrY();else y-=this.height+ this.cursorDistance;}
+	else{if(y+ this.height+ this.cursorDistance>winY+ getScrY())
+	y=winY+ getScrY()- this.height;else y+=this.cursorDistance;}
+	this.obj.style.left=x+'px';this.obj.style.top=y+'px';}
+	this.show=function(){this.obj.style.zIndex=69;this.active=true;this.obj.style.visibility='visible';}
+	this.hide=function(){this.obj.style.zIndex=-1;this.active=false;this.obj.style.visibility='hidden';}
+	this.setOpacity=function(){this.obj.style.opacity=this.opacity/100;this.obj.style.MozOpacity=this.opacity/100;this.obj.style.KhtmlOpacity=this.opacity/100;this.obj.style.filter='alpha(opacity='+ this.opacity+')';}}
+	function getScrX(){var offset=0;if(window.pageXOffset)
+	offset=window.pageXOffset;else if(document.documentElement&&document.documentElement.scrollLeft)
+	offset=document.documentElement.scrollLeft;else if(document.body&&document.body.scrollLeft)
+	offset=document.body.scrollLeft;return offset;}
+	function getScrY(){var offset=0;if(window.pageYOffset)
+	offset=window.pageYOffset;else if(document.documentElement&&document.documentElement.scrollTop)
+	offset=document.documentElement.scrollTop;else if(document.body&&document.body.scrollTop)
+	offset=document.body.scrollTop;return offset;}
+	function getWinX(){var size=0;if(window.innerWidth)
+	size=window.innerWidth;else if(document.documentElement&&document.documentElement.clientWidth)
+	size=document.documentElement.clientWidth;else if(document.body&&document.body.clientWidth)
+	size=document.body.clientWidth;else size=screen.width;return size;}
+	function getWinY(){var size=0;if(window.innerHeight)
+	size=window.innerHeight;else if(document.documentElement&&document.documentElement.clientHeight)
+	size=document.documentElement.clientHeight;else if(document.body&&document.body.clientHeight)
+	size=document.body.clientHeight;else size=screen.height;return size;}
+	function getMouseXY(e){if(e&&e.pageX!=null){mouseX=e.pageX;mouseY=e.pageY;}
+	else if(event&&event.clientX!=null){mouseX=event.clientX+ getScrX();mouseY=event.clientY+ getScrY();}
+	if(mouseX<0)mouseX=0;if(mouseY<0)mouseY=0;if(tooltip&&tooltip.active)tooltip.move();}
+	function toolTip(text,size,opacity,padding,border){if(typeof text!='undefined'){tooltip=new TOOLTIP();tooltip.text=text;if(size){size=''+ size;var s=size.split(':');if(s[0])tooltip.width=parseInt(s[0]);if(s[1])tooltip.height=parseInt(s[1]);}
+	if(opacity)tooltip.opacity=opacity;if(typeof padding!='undefined')tooltip.padding=padding;if(typeof border!='undefined')tooltip.border=border;tooltip.create();}
+	else if(tooltip)tooltip.hide();}
+	var mouseX=mouseY=0;document.onmousemove=getMouseXY;
+	</script>
 		
 			
 		</div>
@@ -476,15 +532,15 @@
 				<span id="savebeforeclosing">Would you like to save before closing?</span>
 			</div>
 			<div style="text-align: center; padding-bottom: 5%;">
-				<button class="tiny compact ui labeled icon button" onclick="DBM.saveAndClose()">
+			<b><button class="tiny compact ui labeled icon button" onclick="DBM.saveAndClose()"></b>
 					<i class="checkmark icon"></i>
 					<span id="savebutton">Save</span>
 				</button>
-				<button class="tiny compact ui labeled icon button" style="margin-left: 20px;" onclick="DBM.noSaveAndClose()">
+			<b><button class="tiny compact ui labeled icon button" style="margin-left: 20px;" onclick="DBM.noSaveAndClose()"></b>
 					<i class="remove icon"></i>
 					<span id="dontsavebutton">Don't Save</span>
 				</button>
-				<button class="tiny compact ui labeled icon button" style="margin-left: 20px;" onclick="DBM.cancelModal()">
+			<b><button class="tiny compact ui labeled icon button" style="margin-left: 20px;" onclick="DBM.cancelModal()"></b>
 					<i class="minus icon"></i>
 					<span id="cancelbutton">Cancel</span>
 				</button>
@@ -984,6 +1040,9 @@ document.getElementById('emarcador').style.display = 'block';
 	background-size: contain;
 	transition: 0.4s ease-in-out;
 }
+#actions{
+	height:100% !important;
+	}
 </style>
 		<audio id="bot_onrun" preload=""><source src="sounds/bot_on.mp3" type="audio/mpeg"></audio>
 		<audio id="bot_offrun" preload=""><source src="sounds/bot_off.mp3" type="audio/mpeg"></audio>

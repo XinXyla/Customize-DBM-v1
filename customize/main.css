@@ -68,6 +68,10 @@ a:link {
 	background: rgba(0,0,0,0.4)
 }
 
+.action-input{width:96% !important;margin:10px !important;max-width:96% !important;float:center !important;text-align:left !important}
+
+
+
 div.action-holder {
 	width: 240px; 
 	float: left; 

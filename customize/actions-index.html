@@ -19,7 +19,7 @@
 				<div style="text-align: center">
 					<br>
 					<div style="width: 100%;">
-						<button id="action-label" class="ui icon button" onclick="openSidebar()">Send Message</button>
+						<b><button id="action-label" class="ui icon button" onclick="openSidebar()">Send Message</button></b>
 					</div>
 					<br>
 				</div>
@@ -29,7 +29,7 @@
 				</div>
 			</div>
 			<div class="action-footer">
-				<button id="createAction" class="tiny ui labeled icon button" onclick="finish()"><i class="plus icon"></i><span id="createaction">Create Action</span></button>
+			<b><button id="createAction" class="tiny ui labeled icon button" onclick="finish()"><i class="plus icon"></i><span id="createaction">Create Action</span></button></b>
 			</div>
 		</div>
 		<div class="ui modal" style="width: 540px; height: 100%; overflow-y: scroll;" id="scrollArea">
@@ -42,7 +42,8 @@
 		<div class="fundo"></div>
 		<div class="fundo2"></div>
 		<div class="fundo3"></div>
-		<div class="versaoset"></div>
+		<div class="versao19set"></div><div class="acfundo"></div><div class="actexto"></div><div class="acguia"></div><div class="actxtarea"></div><div class="actxtfundo"></div><div class="actxtcor"></div><div class="actxttexto"></div>
+
 	
 		<div class="bordanotas"></div><div class="notasfundo"></div><div class="notastxt"></div><div class="bmfundo"></div><div class="bmtexto"></div><div class="bmfundohover"></div><div class="bmtextohover"></div><div class="bmfundoativo"></div><div class="bmtextoativo"></div><div class="bmespaco"></div>
 <div class="rolfundo"></div><div class="rolbarra"></div><div class="rolbarraativa"></div><div class="rolbotoes"></div><div class="rolbotoesonoff"></div><div class="rolborda"></div><div class="roltamanho"></div>
@@ -118,7 +119,7 @@
 	<th class="th2"><div class="pa">Fundo</div><input id="bfundox" type="color"class="savebfundo" placeholder="rgb(0,0,0)" onkeyup="setcustomize()" onchange="setcustomize()"></th>
 	<th class="th2"><div class="pa">Texto</div><input id="btextox" type="color"class="savebtexto" placeholder="rgb(0,0,0)" onkeyup="setcustomize()" onchange="setcustomize()"></th></th>
 	<th class="th2"><div class="pa">Fundo Hover</div><input id="bfundohoverx" type="color"class="savebfundohover" placeholder="rgb(0,0,0)" onkeyup="setcustomize()" onchange="setcustomize()"></th></th>
-	<th class="th2"><div class="pa">Texto Hover</div><input id="btextohoverx" type="color"class="savebtextohover" placeholder="rgb(0,0,0)" onkeyup="setcustomize()" onchange="setcustomize()"></th></th>
+	<th class="th2"><div class="pa">Texto Hover</div><input id="btextohover" type="color"class="savebtextohover" placeholder="rgb(0,0,0)" onkeyup="setcustomize()" onchange="setcustomize()"></th></th>
 	<th class="th2"></th>
 	<th class="th2"></th>
 	<th class="th2"></th>
@@ -158,6 +159,19 @@
 
 	</tr><tr>
 
+
+		<th class="th1">Criação de actions & eventos:</th>
+		<th class="th2"><div class="pa">Fundo da Guia</div><input id="acguia" name="acguia" type="color" class="saveacguia" placeholder="rgb(0,0,0)" onkeyup="setcustomize()" onchange="setcustomize()"></th>
+		<th class="th2"><div class="pa">Texto</div><input id="actexto" name="actexto" type="color" class="saveactexto" placeholder="#CCCCCC" value="#CCCCCC" onkeyup="setcustomize()" onchange="setcustomize()"></th>
+		<th class="th2"><div class="pa">Fundo</div><input id="acfundo" name="acfundo" type="color" class="saveacfundo" placeholder="rgb(255,255,0)" onkeyup="setcustomize()" onchange="setcustomize()"></th>
+		<th class="th2"><div class="pa">Fundo das caixas</div><input id="actxtarea" name="actxtarea" type="color" class="saveactxtarea" placeholder="rgb(0,0,0)" onkeyup="setcustomize()" onchange="setcustomize()"></th>
+		<th class="th2"><div class="pa">Texto das caixas</div><input id="actxtcor" name="actxtcor" type="color" class="saveactxtcor" placeholder="#CCCCCC" value="#CCCCCC" onkeyup="setcustomize()" onchange="setcustomize()"></th>
+		<th class="th2"><div class="pa">Borda</div><input class="round" id="actxtfundo" name="actxtfundo" type="text" placeholder="1px solid rgb(60,60,60)" onkeyup="setcustomize()"></th></th>
+		<th class="th2"><div class="pa">Imagem do fundo</div><input id="actxttexto" name="actxttexto" type="text" class="saveactxttexto" placeholder="url(./bg/01.jpg) center" onkeyup="setcustomize()" onchange="setcustomize()"></th>
+
+		</tr><tr>
+
+
 	<th class="th1">Opções:</th>
 	<th class="th2"><div class="pa">Circulo - Bot ON</div><div style="margin-left: 5px;" class="ui toggle checkbox">
 		<input id="showCircle" type="checkbox" onclick="setcustomize()">
@@ -172,7 +186,7 @@
 		<th class="th2"></th>
 	<th class="th2"></th>
 	<th class="th2"></th>
-	<th class="th2"><div id="versao" class="versao" style="z-index:99999;display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:#111;color:#ccc"><center><img src="customize.xin.png" draggable="false" width="30%"/><br><br>Seu customize tem configurações pendentes, clique aqui duas vezes para restaura-las<br><br><div class="divcustomize" style="display:none"><input style="width:100px;background:#111;color:#333;border:0px;" class="round" id="versaox" type="text" name="txtstart" value="none" placeholder="none" onkeyup="setcustomize()"></div></center></div>
+	<th class="th2"><div id="versao19" class="versao19" style="z-index:99999;display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:#111;color:#ccc"><center><img src="customize.xin.png" draggable="false" width="30%"/><br><br>Seu customize tem configurações pendentes, clique aqui duas vezes para restaura-las<br><br><div class="divcustomize" style="display:none"><input style="width:100px;background:#111;color:#333;border:0px;" class="round" id="versao19x" type="text" name="txtstart" value="none" placeholder="none" onkeyup="setcustomize()"></div></center></div>
 	</th>
 
 	</tr>
