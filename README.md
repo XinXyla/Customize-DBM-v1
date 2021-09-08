@@ -17,5 +17,5 @@ Marcador de comandos, eventos e ações<br>
 Sons e uma bolinha verde quando o bot liga no DBM<br>
 10 Bloco de notas com salvamento automático<br><br>
 ![03](https://user-images.githubusercontent.com/43226244/131953536-f8ad250c-00e0-45b0-aaa5-b5e6ac0a1b74.png)
-![01](https://user-images.githubusercontent.com/43226244/131953547-61ee77d1-dc70-471c-858a-822dc912537b.png)
+![01](https://user-images.githubusercontent.com/43226244/132592340-3ecd51c5-e48e-444f-ae74-fa268f947327.png)
 ![02](https://user-images.githubusercontent.com/43226244/131953554-db099f07-3b77-4d39-9285-bc73a03adbe6.png)
