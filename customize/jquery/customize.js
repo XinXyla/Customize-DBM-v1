@@ -78,7 +78,7 @@ roltamanhoset = document.getElementsByClassName("roltamanho")[0],
 bfundo = document.getElementById('bfundox'),
 btexto = document.getElementById('btextox'),
 bfundohover = document.getElementById('bfundohoverx'),
-btextohover = document.getElementById('btextohoverx'),
+btextohover = document.getElementById('btextohover'),
 bfundoset = document.getElementsByClassName("bfundo")[0],
 btextoset = document.getElementsByClassName("btexto")[0],
 bfundohoverset = document.getElementsByClassName("bfundohover")[0],
@@ -92,8 +92,25 @@ notastxtset = document.getElementsByClassName("notastxt")[0],
 bordanotas = document.getElementById('bordanotas'),
 bordanotasset = document.getElementsByClassName("bordanotas")[0],
 
-versao = document.getElementById('versaox'),
-versaoset = document.getElementsByClassName("versao")[0],
+/* Criação actions e eventos */ 
+acfundo = document.getElementById('acfundo'),
+actexto = document.getElementById('actexto'),
+acguia = document.getElementById('acguia'),
+actxtarea = document.getElementById('actxtarea'),
+actxtfundo = document.getElementById('actxtfundo'),
+actxtcor = document.getElementById('actxtcor'),
+actxttexto = document.getElementById('actxttexto'),
+acfundoset = document.getElementsByClassName("acfundo")[0],
+actextoset = document.getElementsByClassName("actexto")[0],
+acguiaset = document.getElementsByClassName("acguia")[0],
+actxtareaset = document.getElementsByClassName("actxtarea")[0],
+actxtfundoset = document.getElementsByClassName("actxtfundo")[0],
+actxtcorset = document.getElementsByClassName("actxtcor")[0],
+actxttextoset = document.getElementsByClassName("actxttexto")[0],
+
+
+versao19 = document.getElementById('versao19x'),
+versao19set = document.getElementsByClassName("versao19")[0],
 
 fundocustomize = document.getElementById('cordofundo'),
 fundocustomize2 = document.getElementById('cordofundo2'),
@@ -203,10 +220,10 @@ if(fs.existsSync(configFile)) {
 		document.documentElement.style.setProperty("--config-bfundo", document.getElementById("bfundox").value);
 		document.documentElement.style.setProperty("--config-btexto", document.getElementById("btextox").value);
 		document.documentElement.style.setProperty("--config-bfundohover", document.getElementById("bfundohoverx").value);
-		document.documentElement.style.setProperty("--config-btextohover", document.getElementById("btextohoverx").value);
+		document.documentElement.style.setProperty("--config-btextohover", document.getElementById("btextohover").value);
 
-		versao.value = versaoset.style.display = config.versao;
-		document.documentElement.style.setProperty("--config-versao", document.getElementById("versaox").value);
+		versao19.value = versao19set.style.display = config.versao19;
+		document.documentElement.style.setProperty("--config-versao19", document.getElementById("versao19x").value);
 
 		bordanotas.value = bordanotasset.style.background = config.bordanotas;
 		document.documentElement.style.setProperty("--config-bordanotas", document.getElementById("bordanotas").value);
@@ -221,6 +238,24 @@ if(fs.existsSync(configFile)) {
 		document.documentElement.style.setProperty("--config-caixafundo", document.getElementById("cordofundo3").value);
 		document.documentElement.style.setProperty("--config-bordacaixa", document.getElementById("corbordacaixax").value);
 		document.documentElement.style.setProperty("--config-textocaixa", document.getElementById("cortextocaixax").value);
+
+		/* Criação actions e eventos */ 
+		acfundo.value = acfundoset.style.background = config.acfundo;
+		actexto.value = actextoset.style.background = config.actexto;
+		acguia.value = acguiaset.style.background = config.acguia;
+
+		actxtarea.value = actxtareaset.style.background = config.actxtarea;
+		actxtfundo.value = actxtfundoset.style.background = config.actxtfundo;
+		actxtcor.value = actxtcorset.style.background = config.actxtcor;
+		actxttexto.value = actxttextoset.style.background = config.actxttexto;
+		document.documentElement.style.setProperty("--config-acfundo", document.getElementById("acfundo").value);
+		document.documentElement.style.setProperty("--config-actexto", document.getElementById("actexto").value);
+		document.documentElement.style.setProperty("--config-acguia", document.getElementById("acguia").value);
+
+		document.documentElement.style.setProperty("--config-actxtarea", document.getElementById("actxtarea").value);
+		document.documentElement.style.setProperty("--config-actxtfundo", document.getElementById("actxtfundo").value);
+		document.documentElement.style.setProperty("--config-actxtcor", document.getElementById("actxtcor").value);
+		document.documentElement.style.setProperty("--config-actxttexto", document.getElementById("actxttexto").value);
 	});
 }
 else {
@@ -276,7 +311,7 @@ btexto.value = "#cdcdcd";
 bfundohover.value = "#008fd5";
 btextohover.value = "#ffffff";
 
-versao.value = "none";
+versao19.value = "none";
 fundocustomize.value = "url(./bg/01.jpg) center";
 fundocustomize2.value = "rgba(0,0,0,0.4)";
 fundocustomize3.value = "rgba(50,50,50,0.8)";
@@ -284,12 +319,21 @@ bordacaixacustomize.value = "2px solid rgba(60,60,60)";
 textocaixacustomize.value = "#ffffff";
 
 bordanotas.value = "1px solid rgba(60,60,60)";
+	/* Criação actions e eventos */ 
+	acfundo.value = "#36393E";
+actexto.value = "#CCCCCC";
+acguia.value = "#242629";
+
+actxtarea.value = "#2F3136";
+actxtfundo.value = "1px solid rgb(60,60,60)";
+actxtcor.value = "#CCCCCC";
+actxttexto.value = "none";
 }
 
 });
 function setcustomize() {
 const fs = require("fs");
-versaoset.style.background = versao.value;
+versao19set.style.background = versao19.value;
 fundoset.style.background = fundocustomize.value;
 fundoset2.style.background = fundocustomize2.value;
 marcadorset.style.background = marcadorcustomize.value;
@@ -347,9 +391,9 @@ LiveCircle.style.display = "";
 		document.documentElement.style.setProperty("--config-bfundo", document.getElementById("bfundox").value);
 		document.documentElement.style.setProperty("--config-btexto", document.getElementById("btextox").value);
 		document.documentElement.style.setProperty("--config-bfundohover", document.getElementById("bfundohoverx").value);
-		document.documentElement.style.setProperty("--config-btextohover", document.getElementById("btextohoverx").value);
+		document.documentElement.style.setProperty("--config-btextohover", document.getElementById("btextohover").value);
 
-		document.documentElement.style.setProperty("--config-versao", document.getElementById("versaox").value);
+		document.documentElement.style.setProperty("--config-versao19", document.getElementById("versao19x").value);
 
 		document.documentElement.style.setProperty("--config-bordanotas", document.getElementById("bordanotas").value);
 
@@ -358,5 +402,15 @@ LiveCircle.style.display = "";
 		document.documentElement.style.setProperty("--config-caixafundo", document.getElementById("cordofundo3").value);
 		document.documentElement.style.setProperty("--config-bordacaixa", document.getElementById("corbordacaixax").value);
 		document.documentElement.style.setProperty("--config-textocaixa", document.getElementById("cortextocaixax").value);
-fs.writeFile(configFile,JSON.stringify({"showCircle": CheckBoxElement.checked,"playSound": PlaySoundElement.checked,"fundo": fundocustomize.value,"fundo2": fundocustomize2.value,"fundo3": fundocustomize3.value,"fundo4": fundocustomize4.value,"marcador": marcadorcustomize.value,"marcadortxt": marcadorcustomizetxt.value,"textos": textocustomize.value,"corpoespaco": corpoespaco.value,"fundoaction": facustomize.value,"bordaaction": bordaaction.value,"botaoaction": bacustomize.value,"botaoactionhover": bhcustomize.value,"botaoactionhovertxt": bhtxtcustomize.value,"botaoactionativo": bativocustomize.value,"botaoactionativotxt": bativotxtcustomize.value,"botaocor": bcorcustomize.value,"botaoespaco": botaoespaco.value,"bordacaixa": bordacaixacustomize.value,"textocaixa": textocaixacustomize.value,"bmfundo": bmfundo.value,"bmtexto": bmtexto.value,"bmfundohover": bmfundohover.value,"bmtextohover": bmtextohover.value,"bmfundoativo": bmfundoativo.value,"bmtextoativo": bmtextoativo.value,"bmespaco": bmespaco.value,"rolfundo": rolfundo.value,"rolbarra": rolbarra.value,"rolbarraativa": rolbarraativa.value,"rolbotoes": rolbotoes.value,"rolbotoesonoff": rolbotoesonoff.value,"rolborda": rolborda.value,"roltamanho": roltamanho.value,"bfundo": bfundo.value,"btexto": btexto.value,"bfundohover": bfundohover.value,"btextohover": btextohover.value,"notasfundo": notasfundo.value,"notastxt": notastxt.value,"bordanotas": bordanotas.value,"versao": versao.value}), (err) => { if(err) throw err; });
+
+		/* Criação actions e eventos */ 
+		document.documentElement.style.setProperty("--config-acfundo", document.getElementById("acfundo").value);
+		document.documentElement.style.setProperty("--config-actexto", document.getElementById("actexto").value);
+		document.documentElement.style.setProperty("--config-acguia", document.getElementById("acguia").value);
+
+		document.documentElement.style.setProperty("--config-actxtarea", document.getElementById("actxtarea").value);
+		document.documentElement.style.setProperty("--config-actxtfundo", document.getElementById("actxtfundo").value);
+		document.documentElement.style.setProperty("--config-actxtcor", document.getElementById("actxtcor").value);
+		document.documentElement.style.setProperty("--config-actxttexto", document.getElementById("actxttexto").value);
+fs.writeFile(configFile,JSON.stringify({"showCircle": CheckBoxElement.checked,"playSound": PlaySoundElement.checked,"fundo": fundocustomize.value,"fundo2": fundocustomize2.value,"fundo3": fundocustomize3.value,"fundo4": fundocustomize4.value,"marcador": marcadorcustomize.value,"marcadortxt": marcadorcustomizetxt.value,"textos": textocustomize.value,"corpoespaco": corpoespaco.value,"fundoaction": facustomize.value,"bordaaction": bordaaction.value,"botaoaction": bacustomize.value,"botaoactionhover": bhcustomize.value,"botaoactionhovertxt": bhtxtcustomize.value,"botaoactionativo": bativocustomize.value,"botaoactionativotxt": bativotxtcustomize.value,"botaocor": bcorcustomize.value,"botaoespaco": botaoespaco.value,"bordacaixa": bordacaixacustomize.value,"textocaixa": textocaixacustomize.value,"bmfundo": bmfundo.value,"bmtexto": bmtexto.value,"bmfundohover": bmfundohover.value,"bmtextohover": bmtextohover.value,"bmfundoativo": bmfundoativo.value,"bmtextoativo": bmtextoativo.value,"bmespaco": bmespaco.value,"rolfundo": rolfundo.value,"rolbarra": rolbarra.value,"rolbarraativa": rolbarraativa.value,"rolbotoes": rolbotoes.value,"rolbotoesonoff": rolbotoesonoff.value,"rolborda": rolborda.value,"roltamanho": roltamanho.value,"bfundo": bfundo.value,"btexto": btexto.value,"bfundohover": bfundohover.value,"btextohover": btextohover.value,"notasfundo": notasfundo.value,"notastxt": notastxt.value,"bordanotas": bordanotas.value,"versao19": versao19.value,"acfundo": acfundo.value,"actexto": actexto.value,"acguia": acguia.value,"actxtarea": actxtarea.value,"actxtfundo": actxtfundo.value,"actxtcor": actxtcor.value,"actxttexto": actxttexto.value}), (err) => { if(err) throw err; });
 }

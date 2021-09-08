@@ -180,7 +180,7 @@ window.addEventListener("load", function() {
 		document.getElementById('divn9').style.display = 'none';
 	}
 	function fecharatu() {
-document.getElementById('versao').style.display = 'none';
+document.getElementById('versao19').style.display = 'none';
 document.querySelector("[name='txtstart']").value = "none";
 document.querySelector("[name='notastxtqr']").value = "#dddddd";
 document.querySelector("[name='notasbordaqr']").value = "1px solid rgb(60,60,60)";
@@ -194,6 +194,17 @@ document.querySelector("[name='imagemdofundoqr']").value = "url(./bg/01.jpg) cen
 function restaurar2() {
 
 	document.querySelector("[name='cordofundoqr']").value = "rgba(0,0,0,0.3)";
+	}
+
+
+	function setversao19(){
+		document.querySelector("[name='acfundo']").value = "#36393E";
+		document.querySelector("[name='actexto']").value = "#CCCCCC";
+		document.querySelector("[name='acguia']").value = "#242629";
+		document.querySelector("[name='actxtarea']").value = "#2F3136";
+		document.querySelector("[name='actxtfundo']").value = "1px solid rgb(60,60,60)";
+		document.querySelector("[name='actxtcor']").value = "#CCCCCC";
+		document.querySelector("[name='actxttexto']").value = "none";
 	}
 
 	function mouseHandler(e){
