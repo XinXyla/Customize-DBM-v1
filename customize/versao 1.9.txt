@@ -90,4 +90,21 @@ Adicionado: Opção para alterar a borda do bloco de notas
 Alteração: Os botões de criar comandos e eventos foram movidos para outro local pois os usuários estavam clicando sem querer quando iam buscar algo
 Alteração: A caixa de busca foi movida para cima das actions
 Removido: Alguns efeitos foram removidos pois estavam bugando o arrasto de actions
-Correção: Botão de criar actions e eventos não aparecia quando não existia actions e eventos
+Correção: Botão de criar actions e eventos sumia quando não tinha nenhum
+
+
+Versão 1.9
+Criado por: XinXyla#0001
+Adicionado: Opção para alterar a cor do fundo da guia da janela de ações
+Adicionado: Opção para alterar a cor dos textos da janela de ações
+Adicionado: Opção para alterar a cor do fundo da janela de ações
+Adicionado: Opção para adicionar uma imagem de fundo na janela de ações
+Adicionado: Opção para alterar a cor do fundo das caixas da janela de ações
+Adicionado: Opção para alterar a cor dos textos das caixas da janela de ações
+Adicionado: Opção para alterar o tamanho da borda/cores das caixas da janela de ações
+Adicionado: Para melhor compreensão foi adicionado imagens de exemplos na guia Customize do local onde sera alterado
+Alteração: Todas as textarea da janela de ação poderão ser redimencionadas
+Alteração: As textarea da guia de Notas poderão ser redimencionadas
+Alteração: A caixa de ações dos comandos foi aumentada e ajustada para melhor enquadramento
+Correções: Janela de ações maximizadas agora terão a largura definida em 100%
+Correções: A opção de alterar as cores dos botões não estavam funcionando, foi corrigido
