@@ -8,6 +8,7 @@ Troca imagens de fundo do DBM (Auto ajustavél)<br>
 Altera as cores do DBM livremente<br>
 Altera espaços dos botões<br>
 Altera as cores da barra de rolagem e dos botões<br>
+Altera as cores da janela de ação<br>
 Buscador de comandos e eventos<br>
 Buscador de actions dentro dos comandos e eventos<br>
 Marcador de comandos, eventos e ações<br>
