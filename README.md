@@ -1,7 +1,7 @@
 ![Imagem2](https://user-images.githubusercontent.com/43226244/131952818-12cb8eb1-0337-40e0-a1c8-0cdb3ee3cebb.png)
 # Discord Bot Maker - MODS - BRASIL
 
-# CUSTOMIZE - Versão 1.9
+# CUSTOMIZE - Versão 2.0
 
 Descompacte em themes da pasta principal do Discord Bot Maker
 <br>
@@ -16,6 +16,7 @@ Buscador de actions dentro dos comandos e eventos<br>
 Marcador de comandos, eventos e ações<br>
 Sons e uma bolinha verde quando o bot liga no DBM<br>
 10 Bloco de notas com salvamento automático<br><br>
-![03](https://user-images.githubusercontent.com/43226244/131953536-f8ad250c-00e0-45b0-aaa5-b5e6ac0a1b74.png)
-![01](https://user-images.githubusercontent.com/43226244/132592340-3ecd51c5-e48e-444f-ae74-fa268f947327.png)
-![02](https://user-images.githubusercontent.com/43226244/131953554-db099f07-3b77-4d39-9285-bc73a03adbe6.png)
+![01](https://user-images.githubusercontent.com/43226244/133122429-e05af127-680d-4619-8da8-7e1172b007cb.png)
+![02](https://user-images.githubusercontent.com/43226244/133122436-cd88d16d-4736-41d7-900b-83ec9783087e.png)
+![03](https://user-images.githubusercontent.com/43226244/133122439-0adf1097-81c2-4f8e-95c8-c3fc0aa7bc6f.png)
+![04](https://user-images.githubusercontent.com/43226244/133122448-bd23068f-5561-4ebf-9324-b850d79c90fa.png)
