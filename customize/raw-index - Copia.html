@@ -186,5 +186,78 @@
 		nw.Window.get().evalNWBin(null, 'Application.bin');
 		if(window.module) module = window.module;
 	</script>
+	 <link href="jquery/jquery.highlighttextarea.css" rel="stylesheet">
+  
+	 <script>
+	   function appendScript(src, callback) {
+		 var head = document.getElementsByTagName('head')[0];
+	   
+		 if (src.endsWith(".js")) {
+		   var elt = document.createElement("script");
+		   elt.type = "text/javascript";
+		   elt.src = src;
+		 } else {
+		   var elt = document.createElement("link");
+		   elt.rel = "stylesheet";
+		   elt.link = src;
+		 }
+   
+		 elt.onload = function() {
+		   callback();
+		 }
+   
+		 head.appendChild(elt);
+	   }
 	
+	   function runTest() {
+		 $('#main').highlightTextarea({
+			 words: ['Lorem ipsum','Nam varius','Nullam'],
+			 resizable: true,
+			 debug: true
+		 }); 
+	 
+   
+   
+		 addDemo7Events();
+	   }
+   
+	   function addDemo7Events() {
+		   $('#demo7-textarea mark')
+			   .on('mouseover', function (e) {
+				   $('#demo7-last-event').html('Mouseover');
+			   })
+			   .on('mouseout', function (e) {
+				   $('#demo7-last-event').html('Mouseout');
+			   });
+	   }
+	   
+	   function test() {
+		 var jqv = "jquery-1.11.1.min.js";
+   
+		 try {
+		   jqv = window.location.search.split('?')[1].split('=')[1];
+		 } catch (e) {}
+   
+		 appendScript("http://code.jquery.com/" + jqv,
+		   function() {
+			 $('#jqv').val(jqv);
+   
+			 appendScript("http://code.jquery.com/ui/1.10.4/jquery-ui.min.js",
+			 function() {
+			   appendScript("jquery/jquery.highlighttextarea.js",
+			   runTest
+			 )})});
+	   }
+   
+	 function setJQuery(newVersion) {
+	   var jqv = $('#jqv').val();
+   
+	   window.location = 'index.html?jqv=' + jqv;
+	 }
+	
+	 window.onload = test;
+	 </script>
+	 <style>
+		 #main{height:320px !important;position:absolute !important;top:0px !important;top:0px !important;}
+	 </style>
 </html>

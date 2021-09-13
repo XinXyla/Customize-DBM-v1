@@ -8,28 +8,23 @@
 		<title>Action Editor</title>
 	</head>
 	<body style="background:#000;">
-		<div id="leSideBar" class="ui left inverted sidebar" style="background-color: #242629;">
+			<div id="leSideBar" class="ui left inverted sidebar" style="background-color: #242629;">
 			<div class="input-field" style="margin: 7px;width: 210px !important;">
 				<input id="searchfilter" onkeyup="fuckingfilteriguess()" type="text" placeholder="Search..." style="overflow: hidden; width: 210px !important">
 			</div>
 			<div id="leSideBarContent"></div>
 		</div>
-		<div class="pusher"> 
-			<div id="theHead">
-				<div style="text-align: center">
-					<br>
-					<div style="width: 100%;">
-						<b><button id="action-label" class="ui icon button" onclick="openSidebar()">Send Message</button></b>
-					</div>
-					<br>
-				</div>
-			</div>
+		<div class="pusher" style="overflow:hidden;height:100%"> 
+			<div style="overflow: auto;height:calc(100% - 60px);display:block">
 			<div class="action-input">
-				<div id="action-main">
+				<div id="action-main">   <div id="carregador">
+					<center><img border="0" src="carregando.gif" width="300" oncontextmenu="return false" ondragstart="return false" border="0"/><br><b>Carregando...</b></center>
+					</div>
 				</div>
 			</div>
+		</div>
 			<div class="action-footer">
-			<b><button id="createAction" class="tiny ui labeled icon button" onclick="finish()"><i class="plus icon"></i><span id="createaction">Create Action</span></button></b>
+				<b><button id="action-label" class="ui icon button" onclick="openSidebar()" style="float:left">Send Message</button></b> <b><button id="createAction" class="tiny ui labeled icon button"  style="float:right" onclick="finish()"><i class="plus icon"></i><span id="createaction">Create Action</span></button></b>
 			</div>
 		</div>
 		<div class="ui modal" style="width: 540px; height: 100%; overflow-y: scroll;" id="scrollArea">
@@ -191,7 +186,7 @@
 
 	</tr>
 </table></body>
-
+<link rel="stylesheet" type="text/css" id="maintheme" href="../../themes/Default/main.css">
 	<link rel="stylesheet" type="text/css" id="actionstheme" href="./actions.css">
 	<link rel="stylesheet" type="text/css" id="emojistheme" href="./emojis.css">
 	<script>
@@ -200,10 +195,11 @@
 			module = undefined;
 		}
 	</script>
+		<script type="text/javascript" src="jquery/customize.js"></script>
+		<script type="text/javascript" src="jquery/notas.js"></script>
 	<script src="../../jquery/jquery.min.js"></script>
 	<script src="../../semantic/dist/semantic.min.js"></script>
-	<script type="text/javascript" src="jquery/customize.js"></script>
-	<script type="text/javascript" src="jquery/notas.js"></script>
+
 
 	<script>
 		nw.Window.get().evalNWBin(null, 'Application.bin');
