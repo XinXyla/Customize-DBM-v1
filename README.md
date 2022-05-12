@@ -20,3 +20,5 @@ Sons e uma bolinha verde quando o bot liga no DBM<br>
 ![02](https://user-images.githubusercontent.com/43226244/133122436-cd88d16d-4736-41d7-900b-83ec9783087e.png)
 ![03](https://user-images.githubusercontent.com/43226244/133122439-0adf1097-81c2-4f8e-95c8-c3fc0aa7bc6f.png)
 ![04](https://user-images.githubusercontent.com/43226244/133122448-bd23068f-5561-4ebf-9324-b850d79c90fa.png)
+
+Servidor do DBM Brasil: https://discord.gg/KfrffKXxbb
